@@ -1,12 +1,5 @@
 [
   {
-    "date": "2025 - Actualidad",
-    "title": "Desarrollo Web",
-    "company": "Fundación Mira Más Allá",
-    "description": "Desarrollo y mantenimiento del sitio web de la fundación (miramasalla.cl) y apoyo tecnológico a los talleres de tiflotecnología, accesibilidad digital e inclusión de personas ciegas y con baja visión.",
-    "current": true
-  },
-  {
     "date": "Octubre 2025 - Abril 2026",
     "title": "Desarrollo Fullstack",
     "company": "Prevsis",
@@ -19,7 +12,7 @@
     "description": "Participé en proyectos como el desarrollo de scripts para integrar un bot de Telegram en MikroTik v6 con el fin de monitorear la actividad del Firewall; un sistema de gestión de cupones para Casino Arena Maipú que automatiza la impresión de cupones en base a promociones; una red social de deportistas para ProSports; y un sistema de gestión de proyectos para GlobalDev Solutions, donde optimicé la generación de líneas base y de reportes. Stack principal: Python y React.js."
   },
   {
-    "date": "2025",
+    "date": "3 meses",
     "title": "Ingeniería de Software",
     "company": "EcSolutions",
     "description": "Desarrollé «new-vegan», una comandera (terminal para tomar pedidos) para locales gastronómicos."
