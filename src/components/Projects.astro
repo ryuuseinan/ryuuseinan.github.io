@@ -12,6 +12,10 @@ const TAGS: Record<string, { name: string; class: string }> = {
   OSU: { name: "osu! API", class: "bg-[#3a2233] text-[#f0a0c0]" },
   TELEGRAM: { name: "Telegram Bot", class: "bg-[#1c3b5a] text-[#8fc7ea]" },
   MIKROTIK: { name: "Mikrotik", class: "bg-[#3a2a1c] text-[#e0b585]" },
+  DISCORD: { name: "Discord Bot", class: "bg-[#2c2f6b] text-[#a9b2ff]" },
+  TWITCH: { name: "Twitch", class: "bg-[#3a2540] text-[#c9a0ff]" },
+  DOTNET: { name: ".NET", class: "bg-[#2b2b6b] text-[#a9b6ff]" },
+  SQLSERVER: { name: "SQL Server", class: "bg-[#5a2a2a] text-[#f0a8a8]" },
 }
 
 const PROJECTS = projectsData.map((project) => ({
@@ -22,16 +26,47 @@ const PROJECTS = projectsData.map((project) => ({
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
-      <article class="flex flex-col space-x-0 space-y-6 group md:flex-row md:space-x-10 md:space-y-0">
-        <div class="w-full md:w-1/2">
-          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition-all duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-[0_20px_60px_-10px_rgba(251,191,36,0.2)] lg:border lg:border-gray-800 lg:hover:border-yellow-400/30 lg:hover:bg-gray-800/50">
-            <img alt={title} class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" aria-hidden="true"></div>
+    PROJECTS.map(({ images = [], title, description, tags, link, github }) => (
+      <article
+        class={`flex flex-col space-x-0 space-y-6 group md:flex-row md:space-x-10 md:space-y-0 ${images.length ? "" : "md:items-center"}`}
+      >
+        {images.length > 0 && (
+          <div class="w-full md:w-1/2">
+            <div data-gallery class="flex flex-col">
+              <div class="relative flex items-center justify-center overflow-hidden rounded-xl border border-gray-200/70 dark:border-white/10 bg-gray-100 dark:bg-gray-900/60 shadow-xl aspect-video">
+                <img
+                  class="gallery-main object-contain w-full h-full"
+                  alt={title}
+                  loading="lazy"
+                  src={images[0]}
+                />
+              </div>
+              {images.length > 1 && (
+                <div class="grid grid-cols-4 gap-2 mt-2">
+                  {images.map((src, i) => (
+                    <button
+                      type="button"
+                      class={`gallery-thumb overflow-hidden rounded-lg border transition ${i === 0 ? "border-yellow-400/70" : "border-transparent hover:border-yellow-400/40"}`}
+                      data-src={src}
+                      aria-label={`Ver captura ${i + 1}`}
+                    >
+                      <img
+                        class="object-cover w-full h-14"
+                        alt=""
+                        loading="lazy"
+                        src={src}
+                      />
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
-        </div>
+        )}
 
-        <div class="w-full md:w-1/2 md:max-w-lg flex flex-col justify-center">
+        <div
+          class={`w-full flex flex-col justify-center ${images.length ? "md:w-1/2 md:max-w-lg" : "md:max-w-2xl"}`}
+        >
           <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
             {title}
           </h3>
@@ -65,3 +100,30 @@ const PROJECTS = projectsData.map((project) => ({
     ))
   }
 </div>
+
+<script>
+  function initGalleries() {
+    document.querySelectorAll<HTMLElement>("[data-gallery]").forEach((gallery) => {
+      if (gallery.dataset.ready) return
+      gallery.dataset.ready = "1"
+
+      const main = gallery.querySelector(".gallery-main")
+      const thumbs = gallery.querySelectorAll<HTMLElement>(".gallery-thumb")
+
+      thumbs.forEach((thumb) => {
+        thumb.addEventListener("click", () => {
+          main?.setAttribute("src", thumb.dataset.src ?? "")
+          thumbs.forEach((t) => {
+            t.classList.remove("border-yellow-400/70")
+            t.classList.add("border-transparent")
+          })
+          thumb.classList.remove("border-transparent")
+          thumb.classList.add("border-yellow-400/70")
+        })
+      })
+    })
+  }
+
+  initGalleries()
+  document.addEventListener("astro:page-load", initGalleries)
+</script>

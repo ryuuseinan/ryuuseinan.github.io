@@ -1,15 +1,16 @@
 [
   {
+    "date": "2025 - Actualidad",
+    "title": "Desarrollador de Software",
+    "company": "Fundación Mira Más Allá",
+    "description": "Desarrollo y mantenimiento del sitio web de la fundación (miramasalla.cl) y apoyo tecnológico a los talleres de tiflotecnología, accesibilidad digital e inclusión de personas ciegas y con baja visión.",
+    "current": true
+  },
+  {
     "date": "Octubre 2025 - Abril 2026",
     "title": "Desarrollador Fullstack",
     "company": "Prevsis",
     "description": "Desarrollé módulos de gestión financiera, planificación de actividades y gestión de riesgos dentro del Sistema ERP de la empresa, ampliando las capacidades operativas disponibles para los clientes. Contribuí al mantenimiento y evolución del sistema, asegurando la continuidad del servicio."
-  },
-  {
-    "date": "Septiembre 2023 - Septiembre 2024",
-    "title": "Ingeniero de Software",
-    "company": "Universidad Viña del Mar",
-    "description": "Implementé un sistema de gestión de estudiantes con discapacidad. Reduje considerablemente el tiempo requerido para realizar seguimiento a los estudiantes y al generar reportes semestrales o trimestrales."
   },
   {
     "date": "Diciembre 2022 - Junio 2023",
