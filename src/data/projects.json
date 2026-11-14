@@ -78,6 +78,13 @@
     "tags": ["DISCORD", "PYTHON"]
   },
   {
+    "title": "osuperu — servidor de osu! (bancho.py)",
+    "description": "Servidor privado de osu! desplegado sobre bancho.py (backend en Python) con frontend web (bancho-web.ts): perfiles, rankings y gestión de beatmaps.",
+    "github": "https://github.com/ryuuseinan/bancho.py",
+    "images": ["/projects/osuperu.webp"],
+    "tags": ["PYTHON", "OSU"]
+  },
+  {
     "title": "PIU — sistema de gestión de estudiantes",
     "description": "Sistema de gestión de estudiantes con discapacidad (seguimiento y reportes) construido con ASP.NET Core y SQL Server.",
     "github": "https://github.com/ryuuseinan/PIU_old",
