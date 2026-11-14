@@ -78,6 +78,15 @@
     "tags": ["DISCORD", "PYTHON"]
   },
   {
+    "title": "new-vegan — comandera para pedidos",
+    "description": "Comandera (terminal para tomar pedidos) desarrollada en EcSolutions para locales gastronómicos, con impresión de comandas.",
+    "images": [
+      "/projects/newvegan-1.jpg",
+      "/projects/newvegan-2.jpg"
+    ],
+    "tags": []
+  },
+  {
     "title": "osuperu — servidor de osu! (bancho.py)",
     "description": "Servidor privado de osu! desplegado sobre bancho.py (backend en Python) con frontend web (bancho-web.ts): perfiles, rankings y gestión de beatmaps.",
     "github": "https://github.com/ryuuseinan/bancho.py",
