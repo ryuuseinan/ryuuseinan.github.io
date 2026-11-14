@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portafolio - ryuuseinan</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --card: #1a1d27;
+    --border: #2a2e3a;
+    --text: #e6e8ee;
+    --muted: #9aa2b1;
+    --accent: #5b8cff;
+    --tag: #232838;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 48px 20px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  header { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+  header img {
+    width: 108px; height: 108px; border-radius: 50%;
+    border: 3px solid var(--border);
+  }
+  header h1 { font-size: 1.9rem; }
+  header .bio { color: var(--muted); margin-top: 4px; }
+  header .meta { color: var(--muted); font-size: 0.9rem; margin-top: 8px; }
+
+  .section-title {
+    margin: 52px 0 20px;
+    font-size: 1.25rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .section-title span { font-size: 0.85rem; color: var(--muted); font-weight: 400; }
+
+  .demo {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 22px;
+  }
+  .demo-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
+  .demo h3 { font-size: 1.15rem; }
+  .demo p { color: var(--muted); font-size: 0.92rem; margin: 6px 0 14px; }
+  .thumbs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+  }
+  .thumbs figure {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: zoom-in;
+    background: #0b0d12;
+  }
+  .thumbs img { width: 100%; height: 110px; object-fit: cover; display: block; transition: transform .15s ease; }
+  .thumbs figure:hover img { transform: scale(1.05); }
+  .thumbs figcaption { font-size: 0.72rem; color: var(--muted); padding: 5px 8px; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform .12s ease, border-color .12s ease;
+  }
+  .card:hover { transform: translateY(-3px); border-color: var(--accent); }
+  .card h3 { font-size: 1.05rem; }
+  .card h3 a { color: var(--text); }
+  .card h3 a:hover { color: var(--accent); }
+  .card p { color: var(--muted); font-size: 0.9rem; flex-grow: 1; }
+  .tags { display: flex; gap: 8px; flex-wrap: wrap; }
+  .tag {
+    background: var(--tag); color: var(--muted); font-size: 0.75rem;
+    padding: 3px 9px; border-radius: 999px;
+  }
+  .tag.lang { color: var(--accent); }
+  .tag.demo { background: #1d3a2a; color: #7ee2a8; }
+  .badge-demo { font-size: 0.75rem; color: #7ee2a8; }
+
+  .pending li { margin: 6px 0; color: var(--muted); }
+  .pending strong { color: var(--text); }
+
+  footer { text-align: center; color: var(--muted); margin-top: 56px; font-size: 0.85rem; }
+
+  #lightbox {
+    position: fixed; inset: 0; background: rgba(0,0,0,.9);
+    display: none; align-items: center; justify-content: center;
+    flex-direction: column; gap: 12px; padding: 24px; z-index: 100;
+    cursor: zoom-out;
+  }
+  #lightbox.open { display: flex; }
+  #lightbox img { max-width: 95vw; max-height: 85vh; border-radius: 8px; }
+  #lightbox .cap { color: var(--muted); font-size: .9rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <img src="https://avatars.githubusercontent.com/u/130932226?v=4" alt="Avatar">
+    <div>
+      <h1>Luis Gálvez</h1>
+      <p class="bio">Software Engineer, Bachelor of Engineering Sciences</p>
+      <p class="meta">Viña del Mar, Chile &middot;
+        <a href="https://github.com/ryuuseinan" target="_blank">github.com/ryuuseinan</a> &middot;
+        <a href="https://github.com/hinami-chi" target="_blank">github.com/hinami-chi</a>
+      </p>
+    </div>
+  </header>
+
+  <h2 class="section-title">Demos <span>7 proyectos con capturas</span></h2>
+
+  <div class="demo">
+    <div class="demo-head">
+      <h3>Casino web &mdash; Slots, Blackjack y Ruleta Crypto</h3>
+      <div class="tags"><span class="tag lang">Node.js</span><span class="tag">SQLite</span><span class="tag">sin dependencias</span></div>
+    </div>
+    <p>Saldo y aleatoriedad en el servidor (CSPRNG), ledger en SQLite con transacciones atómicas. Ruleta PvP provably fair con HMAC-SHA256. Proyecto local (no publicado en GitHub).</p>
+    <div class="thumbs">
+      <figure data-cap="Login / registro de cuenta"><img src="img/casino-login.png" alt=""><figcaption>Login</figcaption></figure>
+      <figure data-cap="Lobby: elegir juego"><img src="img/casino-lobby.png" alt=""><figcaption>Lobby</figcaption></figure>
+      <figure data-cap="Slots: tirada con resultado"><img src="img/casino-slots.png" alt=""><figcaption>Slots</figcaption></figure>
+      <figure data-cap="Blackjack: reparto de cartas"><img src="img/casino-blackjack.png" alt=""><figcaption>Blackjack</figcaption></figure>
+      <figure data-cap="Ruleta Crypto: mesa PvP"><img src="img/casino-ruleta.png" alt=""><figcaption>Ruleta</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="demo">
+    <div class="demo-head">
+      <h3>lasheet &mdash; compartidor de custom diffs de osu!</h3>
+      <div class="tags"><span class="tag lang">Node.js</span><span class="tag">osu! API</span><span class="tag">IRC</span></div>
+    </div>
+    <p>Plataforma para compartir dificultades personalizadas: hub, listado de beatmaps, ranking de usuarios y salas. Repo: <a href="https://github.com/ryuuseinan/lasheet-backend" target="_blank">lasheet-backend</a>.</p>
+    <div class="thumbs">
+      <figure data-cap="Hub principal"><img src="img/lasheet-hub.png" alt=""><figcaption>Hub</figcaption></figure>
+      <figure data-cap="Listado de beatmaps"><img src="img/lasheet-beatmaps.png" alt=""><figcaption>Beatmaps</figcaption></figure>
+      <figure data-cap="Ranking de usuarios"><img src="img/lasheet-ranking.png" alt=""><figcaption>Ranking</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="demo">
+    <div class="demo-head">
+      <h3>Sistema de control de inventario &mdash; Pizzería Fratelli</h3>
+      <div class="tags"><span class="tag lang">Flask</span><span class="tag">SQLAlchemy</span><span class="tag">MySQL</span></div>
+    </div>
+    <p>Sistema de inventario y ventas: productos, ingredientes, categorías, pedidos y reportes. Repo: <a href="https://github.com/ryuuseinan/Sistema-de-control-de-inventario" target="_blank">Sistema-de-control-de-inventario</a>.</p>
+    <div class="thumbs">
+      <figure data-cap="Panel de inicio"><img src="img/inventario-home.png" alt=""><figcaption>Inicio</figcaption></figure>
+      <figure data-cap="Gestión de productos"><img src="img/inventario-productos.png" alt=""><figcaption>Productos</figcaption></figure>
+      <figure data-cap="Gestión de ingredientes"><img src="img/inventario-ingredientes.png" alt=""><figcaption>Ingredientes</figcaption></figure>
+      <figure data-cap="Categorías"><img src="img/inventario-categorias.png" alt=""><figcaption>Categorías</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="demo">
+    <div class="demo-head">
+      <h3>5WC 2026 &mdash; Score Tracker</h3>
+      <div class="tags"><span class="tag lang">Flask</span><span class="tag">scraping</span></div>
+    </div>
+    <p>Analiza links de partidas de osu! y suma el puntaje por slot/pick del torneo. Proyecto local.</p>
+    <div class="thumbs">
+      <figure data-cap="Formulario de análisis"><img src="img/5wc-tracker.png" alt=""><figcaption>Tracker</figcaption></figure>
+      <figure data-cap="Resultado: total por pick"><img src="img/5wc-resultados.png" alt=""><figcaption>Resultados</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="demo">
+    <div class="demo-head">
+      <h3>appwebtest &mdash; utilidades web</h3>
+      <div class="tags"><span class="tag lang">Flask</span><span class="tag">bbcode</span><span class="tag">osu! API</span></div>
+    </div>
+    <p>Colección de utilidades web: perfil tipo osu!, editor/convertidor de BBCode y páginas varias. Proyecto local.</p>
+    <div class="thumbs">
+      <figure data-cap="Perfil estilo osu!"><img src="img/appwebtest-perfil.png" alt=""><figcaption>Perfil</figcaption></figure>
+      <figure data-cap="Página de utilidades"><img src="img/appwebtest-superpage.png" alt=""><figcaption>Utilidades</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="demo">
+    <div class="demo-head">
+      <h3>ProSports &mdash; red social deportiva</h3>
+      <div class="tags"><span class="tag lang">React</span><span class="tag">Vite</span><span class="tag">Bootstrap</span><span class="tag">API REST</span></div>
+    </div>
+    <p>Frontend de una red social deportiva con feed, perfiles, publicaciones, comentarios, ratings y autenticación. Repo privado: <a href="https://github.com/ryuuseinan/prosports-frontend" target="_blank">prosports-frontend</a>.</p>
+    <div class="thumbs">
+      <figure data-cap="Landing / inicio"><img src="img/prosports-inicio.png" alt=""><figcaption>Inicio</figcaption></figure>
+      <figure data-cap="Modal de inicio de sesión"><img src="img/prosports-login.png" alt=""><figcaption>Login</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="demo">
+    <div class="demo-head">
+      <h3>GlobalDev Solutions &mdash; sitio corporativo</h3>
+      <div class="tags"><span class="tag lang">React</span><span class="tag">Vite</span><span class="tag">React Router</span></div>
+    </div>
+    <p>Sitio corporativo con secciones de empresa, servicios, proyectos, empresas y contacto. Repo privado: <a href="https://github.com/ryuuseinan/globaldev-solutions-frontend" target="_blank">globaldev-solutions-frontend</a>.</p>
+    <div class="thumbs">
+      <figure data-cap="Inicio"><img src="img/globaldev-inicio.png" alt=""><figcaption>Inicio</figcaption></figure>
+      <figure data-cap="La empresa"><img src="img/globaldev-empresa.png" alt=""><figcaption>Empresa</figcaption></figure>
+      <figure data-cap="Servicios"><img src="img/globaldev-servicios.png" alt=""><figcaption>Servicios</figcaption></figure>
+      <figure data-cap="Contacto"><img src="img/globaldev-contacto.png" alt=""><figcaption>Contacto</figcaption></figure>
+    </div>
+  </div>
+
+  <h2 class="section-title">Proyectos propios <span>21 repositorios</span></h2>
+  <div class="grid">
+
+    <div class="card">
+      <h3><a href="https://github.com/ryuuseinan/lasheet-frontend" target="_blank">lasheet-frontend</a></h3>
+      <p>Frontend del proyecto lasheet.</p>
+      <div class="tags"><span class="tag lang">JavaScript</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/ryuuseinan/Sistema-de-control-de-inventario" target="_blank">Sistema de control de inventario</a></h3>
+      <p>Sistema web para el control y gestión de inventario.</p>
+      <div class="tags"><span class="tag lang">HTML</span><span class="tag demo">Demo</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/ryuuseinan/monitoreo-ips-telegram-mikrotik" target="_blank">monitoreo-ips-telegram-mikrotik</a></h3>
+      <p>Monitoreo de IPs con notificaciones a Telegram sobre Mikrotik.</p>
+      <div class="tags"><span class="tag">Automatización</span><span class="tag">Bot Telegram</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/ryuuseinan/webscrapping-spam" target="_blank">webscrapping-spam</a></h3>
+      <p>Scripts de web scraping.</p>
+      <div class="tags"><span class="tag lang">Python</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/ryuuseinan/RapidinApp" target="_blank">RapidinApp</a></h3>
+      <p>App de delivery (React Native / Expo).</p>
+      <div class="tags"><span class="tag lang">JavaScript</span><span class="tag">Expo</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/ryuuseinan/blackjack" target="_blank">blackjack</a></h3>
+      <p>Juego de blackjack por consola.</p>
+      <div class="tags"><span class="tag lang">Python</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/ryuuseinan/osu-utils" target="_blank">osu-utils</a></h3>
+      <p>Utilidades para osu!.</p>
+      <div class="tags"><span class="tag lang">Shell</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/ryuuseinan/PIU_old" target="_blank">PIU_old</a></h3>
+      <p>Sistema de gestión académica (ASP.NET Core + SQL Server).</p>
+      <div class="tags"><span class="tag">C#</span><span class="tag">.NET 6</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/ryuuseinan/ProyectoTravel-2023" target="_blank">ProyectoTravel-2023</a></h3>
+      <p>Proyecto para enseñar a programar.</p>
+      <div class="tags"><span class="tag">Educación</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/ryuuseinan/APIfake" target="_blank">APIfake</a></h3>
+      <p>API falsa para pruebas.</p>
+      <div class="tags"><span class="tag">Backend</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/hinami-chi/hinami-chi-skins" target="_blank">hinami-chi-skins</a></h3>
+      <p>Colección de skins de osu!.</p>
+      <div class="tags"><span class="tag">Skins</span><span class="tag">2 ★</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/hinami-chi/linux-things" target="_blank">linux-things</a></h3>
+      <p>Configuraciones y utilidades de Linux.</p>
+      <div class="tags"><span class="tag">Linux</span><span class="tag">1 ★</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/hinami-chi/osu-np.py" target="_blank">osu-np.py</a></h3>
+      <p>Now-playing para osu! (muestra la canción en reproducción).</p>
+      <div class="tags"><span class="tag lang">Python</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/hinami-chi/osu-skins" target="_blank">osu-skins</a></h3>
+      <p>Colección de skins de osu!.</p>
+      <div class="tags"><span class="tag">Skins</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/hinami-chi/pyon-osu-skins" target="_blank">pyon-osu-skins</a></h3>
+      <p>Remakes de las skins de Pyon.</p>
+      <div class="tags"><span class="tag">Skins</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/hinami-chi/betterdiscord-theme" target="_blank">betterdiscord-theme</a></h3>
+      <p>Tema personalizado para BetterDiscord.</p>
+      <div class="tags"><span class="tag lang">CSS</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/ryuuseinan/ryuuseinan" target="_blank">ryuuseinan</a></h3>
+      <p>Repositorio de perfil de GitHub.</p>
+      <div class="tags"><span class="tag">Perfil</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/ryuuseinan/prosports-frontend" target="_blank">prosports-frontend</a></h3>
+      <p>Frontend de una red social deportiva (feed, perfiles, publicaciones).</p>
+      <div class="tags"><span class="tag lang">React</span><span class="tag demo">Demo</span><span class="tag">Privado</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/ryuuseinan/globaldev-solutions-frontend" target="_blank">globaldev-solutions-frontend</a></h3>
+      <p>Sitio corporativo de GlobalDev Solutions.</p>
+      <div class="tags"><span class="tag lang">React</span><span class="tag demo">Demo</span><span class="tag">Privado</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/ryuuseinan/video-web-dl" target="_blank">video-web-dl</a></h3>
+      <p>Descargador de videos/clips de Twitch (CLI + Streamlink).</p>
+      <div class="tags"><span class="tag lang">Python</span><span class="tag">CLI</span><span class="tag">Privado</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/ryuuseinan/franchu-bot-wsp" target="_blank">franchu-bot-wsp</a></h3>
+      <p>Bot de WhatsApp que responde preguntas, con panel de QR vía Express.</p>
+      <div class="tags"><span class="tag lang">Node.js</span><span class="tag">whatsapp-web.js</span><span class="tag">Privado</span></div>
+    </div>
+
+  </div>
+
+  <h2 class="section-title">Forks y contribuciones <span>24 repositorios</span></h2>
+  <div class="grid">
+
+    <div class="card">
+      <h3><a href="https://github.com/ryuuseinan/rosu-memory" target="_blank">rosu-memory</a></h3>
+      <p>Lector de memoria para osu!, cross-platform, en Rust.</p>
+      <div class="tags"><span class="tag lang">Rust</span><span class="tag">Fork</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/ryuuseinan/cosutrainer" target="_blank">cosutrainer</a></h3>
+      <p>Cambiador de rate de mapas de osu! para Linux.</p>
+      <div class="tags"><span class="tag lang">C</span><span class="tag">1 ★</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/ryuuseinan/osu-puush-archive-index" target="_blank">osu-puush-archive-index</a></h3>
+      <p>Índice de archivos de puush para osu!.</p>
+      <div class="tags"><span class="tag lang">JavaScript</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/ryuuseinan/bancho.py" target="_blank">bancho.py</a></h3>
+      <p>Servidor de osu! comunitario en Python moderno.</p>
+      <div class="tags"><span class="tag lang">Python</span><span class="tag">7mochi.ru</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/ryuuseinan/bancho.py-web" target="_blank">bancho.py-web</a></h3>
+      <p>Frontend web para bancho.py.</p>
+      <div class="tags"><span class="tag lang">TypeScript</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/ryuuseinan/banchus" target="_blank">banchus</a></h3>
+      <p>Servidor de osu! experimental (WIP).</p>
+      <div class="tags"><span class="tag lang">Java</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/ryuuseinan/stern" target="_blank">stern</a></h3>
+      <p>Frontend web para titanic.</p>
+      <div class="tags"><span class="tag">Web</span><span class="tag">osu.titanic.sh</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/ryuuseinan/momo3o-skins" target="_blank">momo3o-skins</a></h3>
+      <p>Colección de skins.</p>
+      <div class="tags"><span class="tag">Skins</span><span class="tag">1 ★</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/ryuuseinan/Elitebotix-Bancho" target="_blank">Elitebotix-Bancho</a></h3>
+      <p>Lado Bancho para Elitebotix.</p>
+      <div class="tags"><span class="tag">osu!</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/ryuuseinan/paradox-osu-overlay" target="_blank">paradox-osu-overlay</a></h3>
+      <p>Overlay para osu!.</p>
+      <div class="tags"><span class="tag">Overlay</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/ryuuseinan/hinami-chi-skins" target="_blank">hinami-chi-skins</a></h3>
+      <p>Colección de skins de osu!.</p>
+      <div class="tags"><span class="tag">Skins</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/ryuuseinan/OsuSkins" target="_blank">OsuSkins</a></h3>
+      <p>Skins de osu!.</p>
+      <div class="tags"><span class="tag">Skins</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/ryuuseinan/harder-to-find-osu-skins" target="_blank">harder-to-find-osu-skins</a></h3>
+      <p>Skins de osu! difíciles de encontrar.</p>
+      <div class="tags"><span class="tag">Skins</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/ryuuseinan/ouroboros1599" target="_blank">ouroboros1599</a></h3>
+      <p>Repositorio del proyecto Ouroboros.</p>
+      <div class="tags"><span class="tag">GitHub Pages</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/ryuuseinan/linux-things" target="_blank">linux-things</a></h3>
+      <p>Configuraciones y utilidades de Linux.</p>
+      <div class="tags"><span class="tag">Linux</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/hinami-chi/static" target="_blank">static</a></h3>
+      <p>Carpeta static (frontend) para gosumemory.</p>
+      <div class="tags"><span class="tag lang">JavaScript</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/hinami-chi/osumemory-ts" target="_blank">osumemory-ts</a></h3>
+      <p>Lectura de memoria de osu!, alternativa a gosumemory.</p>
+      <div class="tags"><span class="tag">osu!</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/hinami-chi/BetterDiscordPlugins" target="_blank">BetterDiscordPlugins</a></h3>
+      <p>Plugins de BetterDiscord.</p>
+      <div class="tags"><span class="tag">BetterDiscord</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/hinami-chi/BetterDiscordAddons" target="_blank">BetterDiscordAddons</a></h3>
+      <p>Plugins y temas para BetterDiscord.</p>
+      <div class="tags"><span class="tag">BetterDiscord</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/hinami-chi/guweb" target="_blank">guweb</a></h3>
+      <p>Frontend para el protocolo de servidores de osu! (gulag).</p>
+      <div class="tags"><span class="tag lang">HTML</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/hinami-chi/bancho.py" target="_blank">bancho.py (hinami-chi)</a></h3>
+      <p>Servidor de osu! comunitario en Python moderno.</p>
+      <div class="tags"><span class="tag lang">Python</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/hinami-chi/osuplus" target="_blank">osuplus</a></h3>
+      <p>Mejoras para la web de osu!.</p>
+      <div class="tags"><span class="tag">osu!</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/hinami-chi/Yuzu-NAND" target="_blank">Yuzu-NAND</a></h3>
+      <p>Datos NAND del emulador Yuzu.</p>
+      <div class="tags"><span class="tag">Emulación</span></div>
+    </div>
+
+    <div class="card">
+      <h3><a href="https://github.com/hinami-chi/osr2mp4-core" target="_blank">osr2mp4-core</a></h3>
+      <p>Convierte replays de osu! (.osr) a mp4.</p>
+      <div class="tags"><span class="tag">osu!</span></div>
+    </div>
+
+  </div>
+
+  <h2 class="section-title">Pendientes de material <span>necesitan tu captura o video</span></h2>
+  <div class="pending">
+    <ul>
+      <li><strong>PIU_old</strong> (ASP.NET Core): requiere SQL Server, sin dump de esquema. Sin captura.</li>
+      <li><strong>RapidinApp</strong> (React Native / Expo): la versión web no renderiza por incompatibilidad de versiones. Mejor un video del móvil.</li>
+      <li><strong>osu-np.py / cosu-memory / osumemory-ts</strong>: requieren osu! en ejecución; conviene una captura o video desde el juego.</li>
+      <li><strong>franchu-bot-wsp</strong> (WhatsApp) y <strong>monitoreo-ips-telegram-mikrotik</strong> (Telegram): botones sin UI; aportar captura de chat o video. El panel <code>/qr</code> no se capturó por seguridad (es un login real).</li>
+      <li><strong>video-web-dl</strong>: es CLI, no tiene interfaz gráfica que fotografiar.</li>
+      <li><strong>Casino Arena Maipú</strong>: no está en esta máquina ni en GitHub. Pasar repo/capturas.</li>
+    </ul>
+  </div>
+
+  <footer>
+    Portafolio con datos de GitHub &middot; 45 repositorios (41 públicos + 4 privados) &middot; 7 demos con capturas
+  </footer>
+
+</div>
+
+<div id="lightbox">
+  <img src="" alt="">
+  <div class="cap"></div>
+</div>
+
+<script>
+  const lb = document.getElementById('lightbox');
+  const lbImg = lb.querySelector('img');
+  const lbCap = lb.querySelector('.cap');
+  document.querySelectorAll('.thumbs figure').forEach(fig => {
+    fig.addEventListener('click', () => {
+      lbImg.src = fig.querySelector('img').src;
+      lbCap.textContent = fig.dataset.cap || '';
+      lb.classList.add('open');
+    });
+  });
+  lb.addEventListener('click', () => lb.classList.remove('open'));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
+</script>
+</body>
+</html>
