@@ -100,7 +100,12 @@
     "title": "PIU — sistema de gestión de estudiantes",
     "description": "Sistema de gestión de estudiantes con discapacidad (seguimiento y reportes) construido con ASP.NET Core y SQL Server.",
     "github": "https://github.com/ryuuseinan/PIU_old",
-    "images": [],
+    "images": [
+      "/projects/piu-1.png",
+      "/projects/piu-2.png",
+      "/projects/piu-3.png",
+      "/projects/piu-4.png"
+    ],
     "tags": ["DOTNET", "SQLSERVER"]
   }
 ]
