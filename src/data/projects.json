@@ -1,12 +1,13 @@
 [
   {
     "title": "lasheet — compartidor de custom diffs de osu!",
-    "description": "Plataforma para compartir dificultades personalizadas de osu!: hub, listado de beatmaps, ranking de usuarios y salas.",
+    "description": "Plataforma para compartir dificultades personalizadas de osu!: hub, listado de beatmaps, ranking de usuarios, salas y un bot de IRC integrado.",
     "github": "https://github.com/ryuuseinan/lasheet-backend",
     "images": [
       "/projects/lasheet-hub.png",
       "/projects/lasheet-beatmaps.png",
-      "/projects/lasheet-ranking.png"
+      "/projects/lasheet-ranking.png",
+      "/projects/lasheet-bot.webp"
     ],
     "tags": ["NODE", "OSU"]
   },
