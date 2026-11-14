@@ -1,20 +1,32 @@
 [
   {
     "date": "2025 - Actualidad",
-    "title": "Desarrollador de Software",
+    "title": "Desarrollo Web",
     "company": "Fundación Mira Más Allá",
     "description": "Desarrollo y mantenimiento del sitio web de la fundación (miramasalla.cl) y apoyo tecnológico a los talleres de tiflotecnología, accesibilidad digital e inclusión de personas ciegas y con baja visión.",
     "current": true
   },
   {
     "date": "Octubre 2025 - Abril 2026",
-    "title": "Desarrollador Fullstack",
+    "title": "Desarrollo Fullstack",
     "company": "Prevsis",
     "description": "Desarrollé módulos de gestión financiera, planificación de actividades y gestión de riesgos dentro del Sistema ERP de la empresa, ampliando las capacidades operativas disponibles para los clientes. Contribuí al mantenimiento y evolución del sistema, asegurando la continuidad del servicio."
   },
   {
+    "date": "2024 - 2025",
+    "title": "Desarrollo Frontend",
+    "company": "GlobalDev Solutions",
+    "description": "Desarrollo de interfaces y sitios corporativos para clientes de la empresa."
+  },
+  {
+    "date": "2025",
+    "title": "Ingeniería de Software",
+    "company": "EcSolutions",
+    "description": "Desarrollo de soluciones de software a medida y soporte a clientes."
+  },
+  {
     "date": "Diciembre 2022 - Junio 2023",
-    "title": "Ingeniero de Software",
+    "title": "Desarrollo de Software",
     "company": "Pizzería Fratelli",
     "description": "Desarrollé un sistema de control de inventario y ventas. Optimicé procesos como la gestión de pedidos y el control de inventario, logrando eficiencia operacional en el restaurante."
   }

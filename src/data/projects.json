@@ -42,6 +42,16 @@
     "tags": ["REACT"]
   },
   {
+    "title": "miramasalla.cl — sitio de la Fundación Mira Más Allá",
+    "description": "Sitio web de la Fundación de Ciegos Mira Más Allá Chile: información institucional, talleres gratuitos de tecnología accesible, radio online y donaciones.",
+    "link": "https://miramasalla.cl",
+    "images": [
+      "/projects/miramasalla-1.png",
+      "/projects/miramasalla-2.png"
+    ],
+    "tags": ["HTML", "CSS"]
+  },
+  {
     "title": "monitoreo-ips-telegram-mikrotik",
     "description": "Bot de Telegram que monitorea IPs sobre Mikrotik y envía notificaciones cuando hay cambios.",
     "link": "https://youtu.be/QsDzaRw3AwU",
