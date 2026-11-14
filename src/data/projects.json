@@ -81,7 +81,10 @@
     "title": "osuperu — servidor de osu! (bancho.py)",
     "description": "Servidor privado de osu! desplegado sobre bancho.py (backend en Python) con frontend web (bancho-web.ts): perfiles, rankings y gestión de beatmaps.",
     "github": "https://github.com/ryuuseinan/bancho.py",
-    "images": ["/projects/osuperu.webp"],
+    "images": [
+      "/projects/osuperu.webp",
+      "/projects/osuperu-2.png"
+    ],
     "tags": ["PYTHON", "OSU"]
   },
   {
