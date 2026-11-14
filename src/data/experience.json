@@ -1,0 +1,20 @@
+[
+  {
+    "date": "Octubre 2025 - Abril 2026",
+    "title": "Desarrollador Fullstack",
+    "company": "Prevsis",
+    "description": "Desarrollé módulos de gestión financiera, planificación de actividades y gestión de riesgos dentro del Sistema ERP de la empresa, ampliando las capacidades operativas disponibles para los clientes. Contribuí al mantenimiento y evolución del sistema, asegurando la continuidad del servicio."
+  },
+  {
+    "date": "Septiembre 2023 - Septiembre 2024",
+    "title": "Ingeniero de Software",
+    "company": "Universidad Viña del Mar",
+    "description": "Implementé un sistema de gestión de estudiantes con discapacidad. Reduje considerablemente el tiempo requerido para realizar seguimiento a los estudiantes y al generar reportes semestrales o trimestrales."
+  },
+  {
+    "date": "Diciembre 2022 - Junio 2023",
+    "title": "Ingeniero de Software",
+    "company": "Pizzería Fratelli",
+    "description": "Desarrollé un sistema de control de inventario y ventas. Optimicé procesos como la gestión de pedidos y el control de inventario, logrando eficiencia operacional en el restaurante."
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "title": "lasheet — compartidor de custom diffs de osu!",
+    "description": "Plataforma para compartir dificultades personalizadas de osu!: hub, listado de beatmaps, ranking de usuarios y salas.",
+    "github": "https://github.com/ryuuseinan/lasheet-backend",
+    "image": "/projects/lasheet.png",
+    "tags": ["NODE", "OSU"]
+  },
+  {
+    "title": "Sistema de control de inventario — Pizzería Fratelli",
+    "description": "Sistema web de inventario y ventas: productos, ingredientes, categorías, pedidos y reportes.",
+    "github": "https://github.com/ryuuseinan/Sistema-de-control-de-inventario",
+    "image": "/projects/inventario.png",
+    "tags": ["FLASK", "PYTHON"]
+  },
+  {
+    "title": "ProSports — red social deportiva",
+    "description": "Frontend de una red social deportiva con feed, perfiles, publicaciones, comentarios, ratings y autenticación.",
+    "link": "https://youtu.be/J_vH2yGbGI0",
+    "github": "https://github.com/ryuuseinan/prosports-frontend",
+    "image": "/projects/prosports.png",
+    "tags": ["REACT"]
+  },
+  {
+    "title": "GlobalDev Solutions — sitio corporativo",
+    "description": "Sitio corporativo con secciones de empresa, servicios, proyectos y contacto.",
+    "github": "https://github.com/ryuuseinan/globaldev-solutions-frontend",
+    "image": "/projects/globaldev.png",
+    "tags": ["REACT"]
+  },
+  {
+    "title": "monitoreo-ips-telegram-mikrotik",
+    "description": "Bot de Telegram que monitorea IPs sobre Mikrotik y envía notificaciones cuando hay cambios.",
+    "link": "https://youtu.be/QsDzaRw3AwU",
+    "image": "/projects/mikrotik.jpg",
+    "tags": ["TELEGRAM", "MIKROTIK"]
+  }
+]

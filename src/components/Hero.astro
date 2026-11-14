@@ -1,0 +1,60 @@
+---
+import Badge from "@/components/Badge.astro"
+import GitHubIcon from "@/components/icons/GitHub.astro"
+import SparklesIcon from "@/components/icons/Sparkles.astro"
+import SocialPill from "@/components/SocialPill.astro"
+---
+
+<div class="max-w-xl">
+  <div class="anim-fade-in flex gap-4 mb-6 items-center">
+    <!-- Avatar with ambient glow -->
+    <div class="relative flex-shrink-0">
+      <div
+        class="absolute inset-0 rounded-full bg-yellow-400/30 dark:bg-yellow-400/20 blur-xl scale-125"
+        aria-hidden="true"
+      >
+      </div>
+      <img
+        class="relative rounded-full shadow-2xl size-20 ring-2 ring-yellow-400/60 ring-offset-2 ring-offset-gray-50 dark:ring-offset-gray-950"
+        src="/avatar.png"
+        alt="ryuuseinan"
+      />
+    </div>
+    <a
+      href="https://github.com/ryuuseinan"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex items-center transition md:justify-center md:hover:scale-105"
+    >
+      <Badge><SparklesIcon class="size-3" /> Disponible para trabajar</Badge>
+    </a>
+  </div>
+
+  <h1
+    class="anim-fade-in anim-delay-1 text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+  >
+    Hey, soy <span class="gradient-name">ryuuseinan</span>
+  </h1>
+
+  <p
+    class="anim-fade-in anim-delay-2 mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+  >
+    <strong>Ingeniero Civil Informático</strong> de Viña del Mar, Chile 🇨🇱. Me especializo en
+    software para el sector educativo, <strong>sistemas ERP</strong> y soluciones
+    corporativas.
+  </p>
+
+  <nav
+    class="anim-fade-in anim-delay-3 flex flex-wrap gap-4 mt-8"
+    aria-label="Redes sociales y contacto"
+  >
+    <SocialPill href="https://github.com/ryuuseinan">
+      <GitHubIcon class="size-4" />
+      GitHub
+    </SocialPill>
+    <SocialPill href="https://github.com/hinami-chi">
+      <GitHubIcon class="size-4" />
+      hinami-chi
+    </SocialPill>
+  </nav>
+</div>
