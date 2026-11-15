@@ -1,12 +1,12 @@
 [
   {
-    "date": "Octubre 2025 - Abril 2026",
+    "date": "Oct 2025 - Abr 2026",
     "title": "Desarrollo Fullstack",
     "company": "Prevsis",
     "description": "Desarrollé módulos de gestión financiera, planificación de actividades y gestión de riesgos dentro del Sistema ERP de la empresa, ampliando las capacidades operativas disponibles para los clientes. Contribuí al mantenimiento y evolución del sistema, asegurando la continuidad del servicio."
   },
   {
-    "date": "nov. de 2024 - feb. de 2025 · En remoto",
+    "date": "Nov 2024 - Feb 2025",
     "title": "Ingeniería de Software",
     "company": "GlobalDev Solutions",
     "description": "Participé en proyectos como el desarrollo de scripts para integrar un bot de Telegram en MikroTik v6 con el fin de monitorear la actividad del Firewall; un sistema de gestión de cupones para Casino Arena Maipú que automatiza la impresión de cupones en base a promociones; una red social de deportistas para ProSports; y un sistema de gestión de proyectos para GlobalDev Solutions, donde optimicé la generación de líneas base y de reportes. Stack principal: Python y React.js."
@@ -18,7 +18,7 @@
     "description": "Desarrollé «new-vegan», una comandera (terminal para tomar pedidos) para locales gastronómicos."
   },
   {
-    "date": "Diciembre 2022 - Junio 2023",
+    "date": "Dic 2022 - Jun 2023",
     "title": "Desarrollo de Software",
     "company": "Pizzería Fratelli",
     "description": "Desarrollé un sistema de control de inventario y ventas. Optimicé procesos como la gestión de pedidos y el control de inventario, logrando eficiencia operacional en el restaurante."
