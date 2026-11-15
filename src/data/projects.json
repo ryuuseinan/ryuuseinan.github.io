@@ -16,8 +16,9 @@
     "description": "Sistema web de inventario y ventas: productos, ingredientes, categorías, pedidos y reportes.",
     "github": "https://github.com/ryuuseinan/Sistema-de-control-de-inventario",
     "images": [
-      "/projects/inventario-productos.png",
-      "/projects/inventario-categorias.png"
+      "/projects/inventario-1.png",
+      "/projects/inventario-2.png",
+      "/projects/inventario-3.png"
     ],
     "tags": ["FLASK", "PYTHON"]
   },
